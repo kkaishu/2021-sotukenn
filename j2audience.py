@@ -23,7 +23,7 @@ bar = st.progress(0)
 for i in range(100):
     latest_iteration.text(f'{i+1}%')
     bar.progress(i+1)
-    time.sleep(0.05)
+    time.sleep(0.01)
 st.header(f'2017~2019年シーズン　{team_name}ホームゲーム全試合データ')
 team_number=team_name.replace("愛媛","37").replace("横浜","34").replace("岡山","42").replace("岐阜","39").replace("京都","24").replace("金沢","275").replace("熊本","38")\
                      .replace("甲府","28").replace("山形","29").replace("山口","330").replace("讃岐","48").replace("鹿児島","338").replace("松本","46").replace("湘南","12")\
