@@ -24,7 +24,8 @@ for i in range(100):
     latest_iteration.text(f'{i+1}%')
     bar.progress(i+1)
     time.sleep(0.1)
-st.header(f'2017~2019年シーズン　{team_all_name}ホームゲーム全試合データ')
+st.header(f'2017~2019年シーズン　{team_all_name}\
+          ホームゲーム全試合データ')
 team_number=team_name.replace("愛媛","37").replace("横浜","34").replace("岡山","42").replace("岐阜","39").replace("京都","24").replace("金沢","275").replace("熊本","38")\
                      .replace("甲府","28").replace("山形","29").replace("山口","330").replace("讃岐","48").replace("鹿児島","338").replace("松本","46").replace("湘南","12")\
                      .replace("新潟","78").replace("水戸","94").replace("千葉","2").replace("群馬","35").replace("大宮","27").replace("大分","31").replace("町田","45")\
