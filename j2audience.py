@@ -7,9 +7,9 @@ import plotly.express as px
 import time
 st.title('J2リーグ観客動員数予測プログラム')
 #st.header('ヘッダー')
-st.header('次の中から調べたいチーム名を下のバナーから選択してください ')
+st.sidebar.header('次の中から調べたいチーム名を下のバナーから選択してください ')
 #st.write('文字列') # markdown
-team_all_name = st.selectbox(
+team_all_name = st.sidebar.selectbox(
     '(2017~2019シーズンのJ2リーグ在籍チームに限ります。)',
     ("モンテディオ山形","横浜FC","ファジアーノ岡山","FC岐阜","京都サンガF.C.","ツエーゲン金沢","ロアッソ熊本","ヴァンフォーレ甲府","愛媛FC","レノファ山口F.C.",\
      "カマタマーレ讃岐","鹿児島ユナイテッドFC","松本山雅FC","湘南ベルマーレ","アルビレックス新潟","水戸ホーリーホック","ジェフユナイテッド千葉","ザスパクサツ群馬",\
