@@ -44,7 +44,7 @@ data=pd.merge(data,tenki[["年/月/日","平均気温(℃)","降水量の合計(
 sec=data.節.str.translate(str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i in range(94)}))
 sec=sec.str.extract("(.+)節",expand=True).rename(columns={0:"節数"})
 data=pd.concat([data,sec],axis=1)
-rank=pd.read_csv("c:\\Users\\梅津魁秀\\anaconda3\\rank.csv").drop(["Unnamed: 0"],axis=1)
+rank=pd.read_csv("rank.csv").drop(["Unnamed: 0"],axis=1)
 rank2=rank.rename(columns={"アウェイ":"ホーム"})
 data=pd.merge(data,rank[["アウェイ","節数","年度","順位"]],on=["アウェイ","年度","節数"],how="left")
 data=pd.merge(data,rank2[["ホーム","節数","年度","順位"]],on=["ホーム","年度","節数"],how="left")
