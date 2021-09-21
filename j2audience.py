@@ -6,8 +6,8 @@ from sklearn import tree
 import plotly.express as px
 import time
 st.title('J2リーグ観客動員数予測プログラム')
-#st.header('ヘッダー')
-st.sidebar.header('次の中から調べたいチーム名を下のバナーから選択してください ')
+st.header('左上の＞をクリックしてサイドバーを開き、チームを選んでください。')
+st.sidebar.header('次のプルダウンの中から調べたいチーム名選択してください ')
 #st.write('文字列') # markdown
 team_all_name = st.sidebar.selectbox(
     '(2017~2019シーズンのJ2リーグ在籍チームに限ります。)',
