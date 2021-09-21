@@ -2,6 +2,4 @@ streamlit
 pandas
 numpy
 tree
-matplotlib
 time
-matplotlib.pyplot
