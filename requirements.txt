@@ -3,3 +3,4 @@ pandas==1.2.4
 numpy==1.20.3
 plotly==5.3.1
 tree==0.2.4
+sklearn==0.0
