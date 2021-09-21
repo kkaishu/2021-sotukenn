@@ -4,8 +4,6 @@ import plotly.express as px
 import numpy as np
 from sklearn import tree
 import plotly.express as px
-import matplotlib as mpl
-import matplotlib.pyplot as plt
 import time
 st.title('J2リーグ観客動員数予測プログラム')
 #st.header('ヘッダー')
