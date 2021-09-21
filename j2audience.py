@@ -34,7 +34,7 @@ game_day=[s.replace("月・祝","月").replace("火・祝","火").replace("水�
 day=data.年度.astype(str)+"/"+game_day
 day=pd.DataFrame({"年/月/日":day})
 data=pd.concat([data,day],axis=1)
-tenki=pd.read_excel(f"c:\\Users\\梅津魁秀\\Desktop\\卒業研究\\天気データ\\全国天気\\{team_name}.xlsx",skiprows=3)
+tenki=pd.read_excel(f"{team_name}.xlsx",skiprows=3)
 tenki=tenki.rename({"×":0})
 tenki=tenki.drop(tenki.index[[0]])
 day2=tenki.年.round().astype(int).astype(str)+"/"+tenki.月.round().astype(int).astype(str).str.zfill(2)+"/"+tenki.日.round().astype(int).astype(str).str.zfill(2)+"("+tenki.曜日+")"
