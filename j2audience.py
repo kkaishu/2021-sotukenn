@@ -50,7 +50,7 @@ sec=data.節.str.translate(str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i i
 sec=sec.str.extract("(.+)節",expand=True).rename(columns={0:"節数"})
 data=pd.concat([data,sec],axis=1)
 rank=pd.read_csv("rank.csv").drop(["Unnamed: 0"],axis=1)
-rank2=rank.rename(columns={"アウェイ":f"{team_name}"})
+rank2=rank.rename(columns={"アウェイ":"ホーム"})
 data=pd.merge(data,rank[["アウェイ","節数","年度","順位"]],on=["アウェイ","年度","節数"],how="left")
 data=pd.merge(data,rank2[["ホーム","節数","年度","順位"]],on=["ホーム","年度","節数"],how="left")
 data=data.rename(columns={"順位_x":"アウェイ順位","順位_y":"ホーム順位"})
