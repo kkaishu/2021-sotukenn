@@ -76,6 +76,8 @@ data.loc[data['入場者数'] > visitors, 'large or small'] = "large"
 data.loc[data['入場者数'] < visitors, 'large or small'] = "small"
 large_number=data=="large"
 small_number=data=="small"
+st.header("全試合数")
+st.write(data.values.sum())
 st.header("large試合数")
 st.write(large_number.values.sum())
 st.header("small試合数")
