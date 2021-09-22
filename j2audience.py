@@ -68,13 +68,17 @@ plot=pd.DataFrame(data["入場者数"])
 plot["入場者数平均"]=visitors
 st.header('入場者数推移')
 st.line_chart(plot)
+summary=st.button("プログラム概要")
+if summary==True:
+    st.write("入場者数の平均より入場者数が多い試合を「large試合」、少ない試合を「small試合」と設定する。\
+    決定木を用いて、日程や天候チーム順位などから分類した結果と比較して、設定とどれくらいの差があるのか検証する。")
 data.loc[data['入場者数'] > visitors, 'large or small'] = "large"
 data.loc[data['入場者数'] < visitors, 'large or small'] = "small"
 large_number=data=="large"
 small_number=data=="small"
-st.header("largeと分類された試合数")
+st.header("large試合数")
 st.write(large_number.values.sum())
-st.header("smallと分類された試合数")
+st.header("small試合数")
 st.write(small_number.values.sum())
 clf = tree.DecisionTreeClassifier(max_depth = 3)
 y=data['large or small'].values
@@ -82,7 +86,7 @@ x=data.drop(["入場者数","large or small"], axis=1)
 clf=clf.fit(x,y)
 predicted = clf.predict(x)
 st.header("決定木を用いた分類")
-st.subheader("分類結果")
+st.subheader("分類した結果")
 st.write(predicted)
 st.subheader("実際の分類")
 st.write(y)
