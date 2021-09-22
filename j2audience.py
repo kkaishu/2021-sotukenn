@@ -50,7 +50,7 @@ sec=data.節.str.translate(str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i i
 sec=sec.str.extract("(.+)節",expand=True).rename(columns={0:"節数"})
 data=pd.concat([data,sec],axis=1)
 rank=pd.read_csv("rank.csv").drop(["Unnamed: 0"],axis=1)
-rank2=rank.rename(columns={"アウェイ":"ホーム"})
+rank2=rank.rename(columns={"アウェイ":f"{team_name}"})
 data=pd.merge(data,rank[["アウェイ","節数","年度","順位"]],on=["アウェイ","年度","節数"],how="left")
 data=pd.merge(data,rank2[["ホーム","節数","年度","順位"]],on=["ホーム","年度","節数"],how="left")
 data=data.rename(columns={"順位_x":"アウェイ順位","順位_y":"ホーム順位"})
@@ -68,7 +68,7 @@ plot=pd.DataFrame(data["入場者数"])
 plot["入場者数平均"]=visitors
 st.header('入場者数推移')
 st.line_chart(plot)
-summary=st.button("プログラム概要")
+summary=st.button("プログラム概要を見る")
 if summary==True:
     st.write("入場者数の平均より入場者数が多い試合を「large試合」、少ない試合を「small試合」と設定する。\
     決定木を用いて、日程や天候チーム順位などから分類した結果と比較して、設定とどれくらいの差があるのか検証する。")
