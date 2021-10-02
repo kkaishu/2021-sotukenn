@@ -54,7 +54,7 @@ rank2=rank.rename(columns={"アウェイ":"ホーム"})
 data=pd.merge(data,rank[["アウェイ","節数","年度","順位"]],on=["アウェイ","年度","節数"],how="left")
 data=pd.merge(data,rank2[["ホーム","節数","年度","順位"]],on=["ホーム","年度","節数"],how="left")
 data=data.rename(columns={"順位_x":"アウェイ順位","順位_y":"ホーム順位"})
-data=data.replace({"節数": {"第":""}})
+data["節数"]=data["節数"].str.replace('第', '')
 st.dataframe(data)
 data["K/O時刻"]=data["K/O時刻"].str[:2]
 score=data.スコア.str.split('-', expand=True)
