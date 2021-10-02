@@ -55,6 +55,7 @@ data=pd.merge(data,rank[["アウェイ","節数","年度","順位"]],on=["アウ
 data=pd.merge(data,rank2[["ホーム","節数","年度","順位"]],on=["ホーム","年度","節数"],how="left")
 data=data.rename(columns={"順位_x":"アウェイ順位","順位_y":"ホーム順位"})
 data=data.drop(["節"],axis=1)
+st.dataframe(data)
 data["K/O時刻"]=data["K/O時刻"].str[:2]
 score=data.スコア.str.split('-', expand=True)
 score=score[[0,1]].astype(np.int64)
