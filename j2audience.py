@@ -68,7 +68,7 @@ plot=pd.DataFrame(data["入場者数"])
 plot["入場者数平均"]=visitors
 st.header('入場者数推移')
 st.line_chart(plot)
-summary=st.button("プログラム概要を見る")
+summary=st.button("プログラム概要はこちらをクリック")
 if summary==True:
     st.write("入場者数の平均より入場者数が多い試合を「large試合」、少ない試合を「small試合」と設定する。\
     決定木を用いて、日程や天候チーム順位などから分類した結果と比較して、設定とどれくらいの差があるのか検証する。")
