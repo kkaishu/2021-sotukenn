@@ -1,7 +1,7 @@
 import youtube_dl
 import streamlit as st
 
-st.title('youtubeからmp3ファイルに変換してダウンロードするプログラムです。'）
+st.title('J2リーグ観客動員数予測プログラム'）
 st.header('下に変換したいyoutubeのURLを張り付けてください。もしかしたら時間がかかるかもです。')
 url=input()
 
