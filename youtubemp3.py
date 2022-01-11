@@ -1,5 +1,6 @@
-pip install youtube-dl
 import youtube_dl
+
+st.tittle("youtubeからmp3ファイルに変換してダウンロードするプログラムです。"）
 
 url=input()
 
