@@ -1,8 +1,8 @@
 import youtube_dl
 import streamlit as st
 
-st.tittle("youtubeからmp3ファイルに変換してダウンロードするプログラムです。"）
-
+st.title("youtubeからmp3ファイルに変換してダウンロードするプログラムです。"）
+st.header('下に変換したいyoutubeのURLを張り付けてください。もしかしたら時間がかかるかもです。')
 url=input()
 
 ydl_opts = {
