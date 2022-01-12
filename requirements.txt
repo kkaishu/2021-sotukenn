@@ -6,5 +6,5 @@ tree==0.2.4
 sklearn==0.0
 lxml==4.6.3
 xlrd==1.2.0
-youtube-dl
-ffmpeg 
+youtube-dl==2021.12.17
+ffmpeg==1.4
